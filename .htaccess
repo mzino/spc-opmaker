@@ -1,0 +1,11 @@
+# Turn on mod_rewrite
+RewriteEngine On
+
+# Remove .php from urls
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Removes index.php from ExpressionEngine URLs
+RewriteCond %{THE_REQUEST} ^GET.*index [NC]
+RewriteRule (.*?)index.php/*(.*) /$1$2 [R=301,NE,L]
