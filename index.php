@@ -146,8 +146,8 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         }
         foreach ($data->screenshots as $val) {
             if ($screens != "")
-                $screens .= "&#013;&#010;&#013;&#010;";
-            $screens .= "[IMG]" . $val->path_full . "[/IMG]";
+                $screens .= "";
+            $screens .= "[IMG]" . $val->path_full . "[/IMG]<br><br>";
         }
         $tot .= "[CENTER][IMG]" . $head_img . "[/IMG][/CENTER]&#013;&#010;&#013;&#010;&#013;&#010;";
         $tot .= "[COLOR=red][B][SIZE=16px]Scheda del gioco[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
@@ -234,7 +234,7 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         //echo "<script>setVideos($rest[1]);
         $tot .= "[COLOR=red][B][SIZE=16px]Video[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
         if (!is_null($rest[1][0]))
-            $tot .= "[VIDEO]https://www.youtube.com/watch?v=" . $videos[0][0] . "[/VIDEO]";
+            $tot .= "https://www.youtube.com/watch?v=" . $videos[0][0];
         $tot .= "&#013;&#010;&#013;&#010;";
         $tot .= "[COLOR=red][B][SIZE=16px]Link utili[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
         $tot .= "[URL=\"" . $website . "\"][B]Sito Ufficiale[/B][/URL]&#013;&#010;[URL=\"https://store.steampowered.com/app/" . $appid . "/\"][B]Pagina Steam[/B][/URL]";
@@ -384,7 +384,7 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
 			<?}?>
 		</div>
 		<footer>
-			<p>Original code by <a href="https://www.gamesforum.it/profile/79112-hantraxhat/" target="_blank">HantraxHat</a> â€¢ Updated and hosted by <a href="https://www.gamesforum.it/profile/43001-onizm/" target="_blank">oniZM</a> for <a href="https://www.gamesforum.it/forum/26-spazio-pc/" target="_blank"><strong>SpazioPC</strong></a></p>
+			<p>Original code by <a href="https://www.gamesforum.it/profile/79112-hantraxhat/" target="_blank">HantraxHat</a> • Updated and hosted by <a href="https://www.gamesforum.it/profile/43001-onizm/" target="_blank">oniZM</a> for <a href="https://www.gamesforum.it/forum/26-spazio-pc/" target="_blank"><strong>SpazioPC</strong></a></p>
 		</footer>
 	</body>
 </html>
