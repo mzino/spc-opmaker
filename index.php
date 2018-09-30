@@ -85,7 +85,7 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         $head_img = $data->header_image;
         $desc     = strip_tags($data->about_the_game, '&#013;&#010;&#013;&#010;');
         // $desc = str_replace(array("<strong>","</strong>", "<u>","</u>"), array("[B]", "[/B]","[U]", "[/U]"), $desc);
-        $desc = str_replace("   ", "&#010;", $desc);
+        $desc = str_replace("	", "&#010;", $desc);
         $devs     = "";
         $pubs     = "";
         foreach ($data->developers as $val) {
