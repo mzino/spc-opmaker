@@ -148,7 +148,7 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         foreach ($data->screenshots as $val) {
             if ($screens != "")
                 $screens .= "";
-            $screens .= "[IMG]" . $val->path_full . "[/IMG]&#010;";
+            $screens .= "[IMG]" . $val->path_full . "[/IMG]-";
         }
         $tot .= "[CENTER][IMG]" . $head_img . "[/IMG][/CENTER]&#013;&#010;&#013;&#010;&#013;&#010;";
         $tot .= "[COLOR=red][B][SIZE=16px]Scheda del gioco[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
@@ -157,14 +157,14 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
             $tot .= "[B]Caratteristiche (Steam):[/B] " . $cats . "&#013;&#010;";
         $tot .= "&#013;&#010;&#013;&#010;";
         $tot .= "[COLOR=red][B][SIZE=16px]Riguardo questo gioco[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
-        $tot .= $desc . "&#013;&#010;&#013;&#010;";
+        $tot .= $desc . "&#013;&#010;&#013;&#010;\n\n\n";
         
         $tot .= "[COLOR=red][B][SIZE=16px]Requisiti di sistema[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
         if ($pc_req != "&#013;&#010;")
             $tot .= "[B][COLOR=RED]WINDOWS[/COLOR][/B]&#013;&#010;" . $pc_req . "&#013;&#010;";
-        if ($lnx_req != "&#013;&#010;")
+        if (strlen($lnx_req) > 3)
             $tot .= "&#013;&#010;[B][COLOR=RED]LINUX[/COLOR][/B]&#013;&#010;" . $lnx_req . "&#013;&#010;";
-        if ($mac_req != "&#013;&#010;")
+        if (strlen($mac_req) > 3)
             $tot .= "&#013;&#010;[B][COLOR=RED]MAC OS[/COLOR][/B]&#013;&#010;" . $mac_req . "&#013;&#010;";
         $tot .= "&#013;&#010;&#013;&#010;";
         $tot .= "[COLOR=red][B][SIZE=16px]Screenshots[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
