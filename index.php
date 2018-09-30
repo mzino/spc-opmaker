@@ -83,7 +83,7 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         $data     = $res->$appid->data;
         $name     = $data->name;
         $head_img = $data->header_image;
-        $desc     = strip_tags($data->about_the_game, '&#013;&#010;&#013;&#010;');
+        $desc     = $data->about_the_game, '&#013;&#010;&#013;&#010;';
         // $desc = str_replace(array("<strong>","</strong>", "<u>","</u>"), array("[B]", "[/B]","[U]", "[/U]"), $desc);
         $devs     = "";
         $pubs     = "";
@@ -147,7 +147,7 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         foreach ($data->screenshots as $val) {
             if ($screens != "")
                 $screens .= "";
-            $screens .= "[IMG]" . $val->path_full . "[/IMG]<br><br>";
+            $screens .= "[IMG]" . $val->path_full . "[/IMG]&#013;&#010;&#013;&#010;";
         }
         $tot .= "[CENTER][IMG]" . $head_img . "[/IMG][/CENTER]&#013;&#010;&#013;&#010;&#013;&#010;";
         $tot .= "[COLOR=red][B][SIZE=16px]Scheda del gioco[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
