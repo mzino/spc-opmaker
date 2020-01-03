@@ -66,7 +66,7 @@
 				</div>
 			</form>
 			<textarea id="ciccio" onclick="selectText('ciccio');" readonly>
-<?
+<?php
 $appid = $_POST["appid"];
 if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
     if (is_numeric($appid)) {
@@ -363,26 +363,26 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
 				<div class="text_button">Seleziona e copia tutto</div>
 			</div>
 			<div id="videos" class="clearfix"></div>
-			<?
+			<?php
 				echo "<script>";
 				echo "var vids = ".json_encode($videos[0]).";";
 				echo "var ttl = ".json_encode($videos[1]).";";
 				echo "addVideo(vids,ttl)";
 				echo "</script>";
 			?>
-			<?if(isset($spcor)){?>
+			<?php if(isset($spcor)){?>
 				<br><br>
 				<h1>Correlazione sito (moderatori)</h1>
 				<br>
 				<div id="correl" onclick="selectText('correl');">
-					<?
+					<?php
 						$sprzl = "[URL=\"XYZ\"][Ufficiale] $name [Sezione PC][/URL]<br>[URL=\"https://www.spaziogames.it$spcor[1]\"]$spcor[2] - Scheda Spaziogames[/URL]";
 						echo $sprzl;
 						// logStatus($sprzl);
 					?>
 				</div>
 				<br><br>
-			<?}?>
+			<?php }?>
 		</div>
 		<footer>
 			<p>Original code by <a href="https://www.gamesforum.it/profile/79112-hantraxhat/" target="_blank">HantraxHat</a> • Updated and hosted by <a href="https://www.gamesforum.it/profile/43001-onizm/" target="_blank">oniZM</a> for <a href="https://www.gamesforum.it/forum/26-spazio-pc/" target="_blank"><strong>SpazioPC</strong></a></p>

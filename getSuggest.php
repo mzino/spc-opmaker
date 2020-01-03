@@ -1,4 +1,4 @@
-<?
+<?php
 if (isset($_GET['term'])) {
     $term = urlencode($_GET['term']);
     if (!isset($_GET['disableLink']))
