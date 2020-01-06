@@ -46,7 +46,7 @@
 						<input class="g_name" id="g_name_or" autocomplete="off" name="g_name_or" onClick="this.select();" type="hidden" placeholder="Ricerca gioco..." onkeypress="getSuggestOrigin();">
 						<br>
 						<input type="hidden" id="appid" name="appid">
-						<input type="hidden" id="link_img" name="link_img">				
+						<input type="hidden" id="link_img" name="link_img">
 						<select id="sr_list" onclick = required onclick = "if (typeof(this.selectedIndex) != 'undefined') checksel_game(this.selectedIndex);">
 						</select>
 					</div>
@@ -130,7 +130,7 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
             "[B]Minimi[/B]",
             "[B]Raccomandati[/B]"
         ), $lnx_req);
-        
+
         $genre   = "";
         $cats    = "";
         $screens = "";
@@ -158,7 +158,7 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         $tot .= "&#013;&#010;&#013;&#010;";
         $tot .= "[COLOR=red][B][SIZE=16px]Riguardo questo gioco[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
         $tot .= $desc . "&#013;&#010;&#013;&#010;\n\n\n";
-        
+
         $tot .= "[COLOR=red][B][SIZE=16px]Requisiti di sistema[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
         if ($pc_req != "&#013;&#010;")
             $tot .= "[B][COLOR=RED]WINDOWS[/COLOR][/B]&#013;&#010;" . $pc_req . "&#013;&#010;";
@@ -318,7 +318,7 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         $tot .= "<br><br>";
         $tot .= "[COLOR=\"red\"][B][SIZE=\"3\"]Riguardo questo gioco[/SIZE][/B][/COLOR]<br><br>";
         $tot .= $desc . "<br><br>";
-        
+
         $tot .= "[COLOR=\"red\"][B][SIZE=\"3\"]Requisiti di sistema[/SIZE][/B][/COLOR]<br><br>";
         $tot .= $req;
         $tot .= "<br><br>";
@@ -385,7 +385,7 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
 			<?php }?>
 		</div>
 		<footer>
-			<p>Original code by <a href="https://www.gamesforum.it/profile/79112-hantraxhat/" target="_blank">HantraxHat</a> • Updated and hosted by <a href="https://www.gamesforum.it/profile/43001-onizm/" target="_blank">oniZM</a> for <a href="https://www.gamesforum.it/forum/26-spazio-pc/" target="_blank"><strong>SpazioPC</strong></a></p>
+			<p>Original code by <a href="https://www.gamesforum.it/profile/79072-hantraxhat/" target="_blank">HantraxHat</a> • Updated and mantained by <a href="https://www.gamesforum.it/profile/42969-onizm/" target="_blank">oniZM</a> for <a href="https://www.gamesforum.it/forum/23-spazio-pc/" target="_blank"><strong>SpazioPC</strong></a></p>
 		</footer>
 	</body>
 </html>
