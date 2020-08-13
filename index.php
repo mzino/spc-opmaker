@@ -180,9 +180,9 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $data = curl_exec($ch);
         curl_close($ch);
-        $pattern = "!<a aria-hidden=\"true\"  href=\"/watch\?v=([^\"]+)!is";
+        $pattern = "!{\"videoRenderer\":{\"videoId\":\"([^\"]+)!is";
         preg_match_all($pattern, $data, $rest);
-        $pattern = "! dir=\"ltr\">([^<]+)</a>!is";
+        $pattern = "!}]},\"title\":{\"runs\":\[{\"text\":\"([^\"]+)!is";
         preg_match_all($pattern, $data, $ttl);
         $videos = array(
             array(),
@@ -336,9 +336,9 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $data = curl_exec($ch);
         curl_close($ch);
-        $pattern = "!<a aria-hidden=\"true\"  href=\"/watch\?v=([^\"]+)!is";
+        $pattern = "!{\"videoRenderer\":{\"videoId\":\"([^\"]+)!is";
         preg_match_all($pattern, $data, $rest);
-        $pattern = "! dir=\"ltr\">([^<]+)</a>!is";
+        $pattern = "!}]},\"title\":{\"runs\":\[{\"text\":\"([^\"]+)!is";
         preg_match_all($pattern, $data, $ttl);
         $videos = array(
             array(),
