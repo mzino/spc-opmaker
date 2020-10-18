@@ -148,29 +148,29 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         foreach ($data->screenshots as $val) {
             if ($screens != "")
                 $screens .= "";
-            $screens .= "[IMG]" . $val->path_full . "[/IMG]-";
+            $screens .= "[IMG]" . $val->path_full . "[/IMG] ";
         }
         $tot .= "[CENTER][IMG]" . $head_img . "[/IMG][/CENTER]&#013;&#010;&#013;&#010;&#013;&#010;";
-        $tot .= "[COLOR=red][B][SIZE=16px]Scheda del gioco[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
+        $tot .= "[COLOR=red][B][SIZE=5]Scheda del gioco[/SIZE][/B][/COLOR]&#013;&#010;";
         $tot .= "[B]Genere:[/B] " . $genre . "&#013;&#010;[B]Sviluppatore:[/B] " . $devs . "&#013;&#010;[B]Editore:[/B] " . $pubs . "&#013;&#010;[B]Data di rilascio:[/B] " . $rdate . "&#013;&#010;";
         if ($cats != "")
             $tot .= "[B]Caratteristiche (Steam):[/B] " . $cats . "&#013;&#010;";
         $tot .= "&#013;&#010;&#013;&#010;";
-        $tot .= "[COLOR=red][B][SIZE=16px]Riguardo questo gioco[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
-        $tot .= $desc . "&#013;&#010;&#013;&#010;\n\n\n";
+        $tot .= "[COLOR=red][B][SIZE=5]Riguardo questo gioco[/SIZE][/B][/COLOR]&#013;&#010;";
+        $tot .= $desc . "&#013;&#010;&#013;&#010;&#013;&#010;";
 
-        $tot .= "[COLOR=red][B][SIZE=16px]Requisiti di sistema[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
+        $tot .= "[COLOR=red][B][SIZE=5]Requisiti di sistema[/SIZE][/B][/COLOR]&#013;&#010;";
         if ($pc_req != "&#013;&#010;")
-            $tot .= "[B][COLOR=RED]WINDOWS[/COLOR][/B]&#013;&#010;" . $pc_req . "&#013;&#010;";
+            $tot .= "[B][COLOR=red]WINDOWS[/COLOR][/B]&#013;&#010;" . $pc_req . "&#013;&#010;";
         if (strlen($lnx_req) > 3)
-            $tot .= "&#013;&#010;[B][COLOR=RED]LINUX[/COLOR][/B]&#013;&#010;" . $lnx_req . "&#013;&#010;";
+            $tot .= "&#013;&#010;[B][COLOR=red]LINUX[/COLOR][/B]&#013;&#010;" . $lnx_req . "&#013;&#010;";
         if (strlen($mac_req) > 3)
-            $tot .= "&#013;&#010;[B][COLOR=RED]MAC OS[/COLOR][/B]&#013;&#010;" . $mac_req . "&#013;&#010;";
+            $tot .= "&#013;&#010;[B][COLOR=red]MAC OS[/COLOR][/B]&#013;&#010;" . $mac_req . "&#013;&#010;";
         $tot .= "&#013;&#010;&#013;&#010;";
-        $tot .= "[COLOR=red][B][SIZE=16px]Screenshots[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
+        $tot .= "[COLOR=red][B][SIZE=5]Screenshots[/SIZE][/B][/COLOR]&#013;&#010;";
         $tot .= "[SPOILER]";
         $tot .= $screens;
-        $tot .= "[/SPOILER]&#013;&#010;&#013;&#010;";
+        $tot .= "[/SPOILER]&#013;&#010;&#013;&#010;&#013;&#010;";
         $url = "https://www.youtube.com/results?search_query=" . urlencode($name) . "+pc+trailer";
         $ch  = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -233,11 +233,10 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         $videos[1][$i+6]= $ttl[1][$i];
         }*/
         //echo "<script>setVideos($rest[1]);
-        $tot .= "[COLOR=red][B][SIZE=16px]Video[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
+        $tot .= "[COLOR=red][B][SIZE=5]Video[/SIZE][/B][/COLOR]&#013;&#010;";
         if (!is_null($rest[1][0]))
-            $tot .= "https://www.youtube.com/watch?v=" . $videos[0][0];
-        $tot .= "&#013;&#010;&#013;&#010;";
-        $tot .= "[COLOR=red][B][SIZE=16px]Link utili[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
+            $tot .= "[MEDIA=youtube]" . $videos[0][0] . "[/MEDIA]&#013;&#010;&#013;&#010;";
+        $tot .= "[COLOR=red][B][SIZE=5]Link utili[/SIZE][/B][/COLOR]&#013;&#010;";
         $tot .= "[URL=\"" . $website . "\"][B]Sito Ufficiale[/B][/URL]&#013;&#010;[URL=\"https://store.steampowered.com/app/" . $appid . "/\"][B]Pagina Steam[/B][/URL]";
         if ($pcgw != "")
             $tot .= "&#013;&#010;[URL=\"" . $pcgw . "\"][B]PCGamingWiki[/B][/URL]&#013;&#010;";
