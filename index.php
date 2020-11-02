@@ -155,18 +155,19 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         $tot .= "[B]Genere:[/B] " . $genre . "&#013;&#010;[B]Sviluppatore:[/B] " . $devs . "&#013;&#010;[B]Editore:[/B] " . $pubs . "&#013;&#010;[B]Data di rilascio:[/B] " . $rdate . "&#013;&#010;";
         if ($cats != "")
             $tot .= "[B]Caratteristiche (Steam):[/B] " . $cats . "&#013;&#010;";
-        $tot .= "&#013;&#010;&#013;&#010;";
+        $tot .= "&#013;&#010;";
+        $tot .= "[MEDIA=steamstore]" . $appid . "[/MEDIA]";
+        $tot .= "&#013;&#010;&#013;&#010;&#013;&#010;";
         $tot .= "[COLOR=red][B][SIZE=5]Riguardo questo gioco[/SIZE][/B][/COLOR]&#013;&#010;";
         $tot .= $desc . "&#013;&#010;&#013;&#010;&#013;&#010;";
-
-        $tot .= "[COLOR=red][B][SIZE=5]Requisiti di sistema[/SIZE][/B][/COLOR]&#013;&#010;";
+        $tot .= "[COLOR=red][B][SIZE=5]Requisiti di sistema[/SIZE][/B][/COLOR]&#013;&#010;&#013;&#010;";
         if ($pc_req != "&#013;&#010;")
             $tot .= "[B][COLOR=red]WINDOWS[/COLOR][/B]&#013;&#010;" . $pc_req . "&#013;&#010;";
         if (strlen($lnx_req) > 3)
             $tot .= "&#013;&#010;[B][COLOR=red]LINUX[/COLOR][/B]&#013;&#010;" . $lnx_req . "&#013;&#010;";
         if (strlen($mac_req) > 3)
             $tot .= "&#013;&#010;[B][COLOR=red]MAC OS[/COLOR][/B]&#013;&#010;" . $mac_req . "&#013;&#010;";
-        $tot .= "&#013;&#010;&#013;&#010;";
+        $tot .= "&#013;&#010;&#013;&#010;&#013;&#010;";
         $tot .= "[COLOR=red][B][SIZE=5]Screenshots[/SIZE][/B][/COLOR]&#013;&#010;";
         $tot .= "[SPOILER]";
         $tot .= $screens;
@@ -235,7 +236,7 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         //echo "<script>setVideos($rest[1]);
         $tot .= "[COLOR=red][B][SIZE=5]Video[/SIZE][/B][/COLOR]&#013;&#010;";
         if (!is_null($rest[1][0]))
-            $tot .= "[MEDIA=youtube]" . $videos[0][0] . "[/MEDIA]&#013;&#010;&#013;&#010;";
+            $tot .= "[MEDIA=youtube]" . $videos[0][0] . "[/MEDIA]&#013;&#010;&#013;&#010;&#013;&#010;";
         $tot .= "[COLOR=red][B][SIZE=5]Link utili[/SIZE][/B][/COLOR]&#013;&#010;";
         $tot .= "[URL=\"" . $website . "\"][B]Sito Ufficiale[/B][/URL]&#013;&#010;[URL=\"https://store.steampowered.com/app/" . $appid . "/\"][B]Pagina Steam[/B][/URL]";
         if ($pcgw != "")
