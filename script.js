@@ -165,7 +165,7 @@ function selectPK(element, vids){
 	setVideo(vids);
 }
 function setVideo(vids){
-	document.getElementById("ciccio").innerHTML = document.getElementById("ciccio").innerHTML.replace(/watch\?v=[^\[]+/gi, "watch\?v="+vids);
+	document.getElementById("ciccio").innerHTML = document.getElementById("ciccio").innerHTML.replace(/\[MEDIA=youtube\][^\[]+/gi, "[MEDIA=youtube]"+vids);
 }
 function getSuggestOrigin(){
 	var name = document.getElementById("g_name_or");
