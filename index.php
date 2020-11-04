@@ -385,7 +385,7 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
 			<?php }?>
 		</div>
 		<footer>
-			<p>Original code by <a href="https://www.gamesforum.it/profile/79072-hantraxhat/" target="_blank">HantraxHat</a> • Updated and mantained by <a href="https://www.gamesforum.it/profile/42969-onizm/" target="_blank">oniZM</a> for <a href="https://www.gamesforum.it/forum/23-spazio-pc/" target="_blank"><strong>SpazioPC</strong></a></p>
+			<p>Original code by <a href="https://forum.spaziogames.it/members/.79072/" target="_blank">HantraxHat</a> • Updated and mantained by <a href="https://forum.spaziogames.it/members/.42969/" target="_blank">oniZM</a> for <a href="https://forum.spaziogames.it/forums/.23/" target="_blank"><strong>SpazioPC</strong></a></p>
 		</footer>
 	</body>
 </html>
