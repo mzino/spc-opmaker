@@ -100,14 +100,14 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         }
         $tot     = "";
         $website = $data->website;
-        $pc_req_min = preg_replace('/<'.br.'(\s*|\s(.|\s)[^>]*)>/i', "\n", $data->pc_requirements->minimum);
-        $pc_req_recom = preg_replace('/<'.br.'(\s*|\s(.|\s)[^>]*)>/i', "\n", $data->pc_requirements->recommended);
+        $pc_req_min = preg_replace('/<br(\s*|\s(.|\s)[^>]*)>/i', "\n", $data->pc_requirements->minimum);
+        $pc_req_recom = preg_replace('/<br(\s*|\s(.|\s)[^>]*)>/i', "\n", $data->pc_requirements->recommended);
         $pc_req  = strip_tags($pc_req_min . "\n" . $pc_req_recom);
-        $mac_req_min = preg_replace('/<'.br.'(\s*|\s(.|\s)[^>]*)>/i', "\n", $data->mac_requirements->minimum);
-        $mac_req_recom = preg_replace('/<'.br.'(\s*|\s(.|\s)[^>]*)>/i', "\n", $data->mac_requirements->recommended);
+        $mac_req_min = preg_replace('/<br(\s*|\s(.|\s)[^>]*)>/i', "\n", $data->mac_requirements->minimum);
+        $mac_req_recom = preg_replace('/<br(\s*|\s(.|\s)[^>]*)>/i', "\n", $data->mac_requirements->recommended);
         $mac_req = strip_tags($mac_req_min . "\n" . $mac_req_recom);
-        $lnx_req_min = preg_replace('/<'.br.'(\s*|\s(.|\s)[^>]*)>/i', "\n", $data->linux_requirements->minimum);
-        $lnx_req_recom = preg_replace('/<'.br.'(\s*|\s(.|\s)[^>]*)>/i', "\n", $data->linux_requirements->recommended);
+        $lnx_req_min = preg_replace('/<br(\s*|\s(.|\s)[^>]*)>/i', "\n", $data->linux_requirements->minimum);
+        $lnx_req_recom = preg_replace('/<br(\s*|\s(.|\s)[^>]*)>/i', "\n", $data->linux_requirements->recommended);
         $lnx_req = strip_tags($lnx_req_min . "\n" . $lnx_req_recom);
         $pc_req  = str_replace(array(
             "Minimi:",
@@ -193,7 +193,7 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
             $videos[0][$i] = $rest[1][$i];
             $videos[1][$i] = $ttl[1][$i];
         }
-        $pcgw = "";
+        /*$pcgw = "";
         $url  = "https://pcgamingwiki.com/w/api.php?action=askargs&conditions=Steam%20AppID::" . $appid . "&format=json";
         $ch   = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -208,7 +208,8 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
         $first_result = reset($results);
         $article_url  = $first_result["fullurl"];
         if ($article_url != null)
-            $pcgw = "https:" . $article_url;
+            $pcgw = "https:" . $article_url;*/
+
         /*$url = "http://www.spaziogames.it/cerca_videogiochi/index.aspx?q=".urlencode(preg_replace('/[^A-Za-z0-9\- ]/', '', $name))."&ordinamento=alfabetico";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -239,8 +240,8 @@ if (is_numeric($appid) || strpos($appid, '/store/buy/') !== FALSE) {
             $tot .= "[MEDIA=youtube]" . $videos[0][0] . "[/MEDIA]&#013;&#010;&#013;&#010;&#013;&#010;";
         $tot .= "[COLOR=red][B][SIZE=5]Link utili[/SIZE][/B][/COLOR]&#013;&#010;";
         $tot .= "[URL=\"" . $website . "\"][B]Sito Ufficiale[/B][/URL]&#013;&#010;[URL=\"https://store.steampowered.com/app/" . $appid . "/\"][B]Pagina Steam[/B][/URL]";
-        if ($pcgw != "")
-            $tot .= "&#013;&#010;[URL=\"" . $pcgw . "\"][B]PCGamingWiki[/B][/URL]&#013;&#010;";
+        //if ($pcgw != "")
+        //    $tot .= "&#013;&#010;[URL=\"" . $pcgw . "\"][B]PCGamingWiki[/B][/URL]&#013;&#010;";
         // $tot .= '&#013;&#010;<iframe src="https://store.steampowered.com/widget/' . $appid . '/" frameborder="0" width="646" height="190"></iframe>';
         $tot = str_replace(":D", ": D", $tot);
         echo $tot;
